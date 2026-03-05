@@ -189,8 +189,8 @@ animation:fall linear infinite;
 /* FINAL ANIMATION */
 
 .reveal{
-
-font-size:32px;
+font-size:26px;
+font-weight:600;
 
 opacity:0;
 
