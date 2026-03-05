@@ -1,3 +1,11 @@
+function startGame(){
+
+document.getElementById("startScreen").style.display="none";
+
+document.getElementById("start").style.display="block";
+
+}
+
 function nextPage(id){
 
 document.querySelectorAll(".card").forEach(c=>c.style.display="none");
@@ -18,7 +26,7 @@ alert("Ez nem a jó válasz 😄");
 
 }
 
-
+/* DAY COUNTER */
 
 const startDate=new Date("2024-02-16");
 
@@ -28,7 +36,7 @@ const diff=Math.floor((today-startDate)/(1000*60*60*24));
 
 document.getElementById("daysCounter").innerText=diff+" napja vagyunk együtt";
 
-
+/* IMAGES */
 
 const funny=[];
 
@@ -38,8 +46,6 @@ funny.push("images/funny"+i+".jpg");
 
 }
 
-
-
 const love=[];
 
 for(let i=1;i<=11;i++){
@@ -48,13 +54,12 @@ love.push("images/love"+i+".jpg");
 
 }
 
-
+/* INDEX */
 
 let fIndex=0;
-
 let lIndex=0;
 
-
+/* UPDATE */
 
 function updateFunny(){
 
@@ -64,8 +69,6 @@ document.getElementById("funnyCounter").innerText=(fIndex+1)+" / "+funny.length;
 
 }
 
-
-
 function updateLove(){
 
 document.getElementById("loveImg").src=love[lIndex];
@@ -73,8 +76,6 @@ document.getElementById("loveImg").src=love[lIndex];
 document.getElementById("loveCounter").innerText=(lIndex+1)+" / "+love.length;
 
 }
-
-
 
 function nextFunny(){
 
@@ -84,8 +85,6 @@ updateFunny();
 
 }
 
-
-
 function prevFunny(){
 
 fIndex=(fIndex-1+funny.length)%funny.length;
@@ -93,8 +92,6 @@ fIndex=(fIndex-1+funny.length)%funny.length;
 updateFunny();
 
 }
-
-
 
 function nextLove(){
 
@@ -104,8 +101,6 @@ updateLove();
 
 }
 
-
-
 function prevLove(){
 
 lIndex=(lIndex-1+love.length)%love.length;
@@ -114,37 +109,23 @@ updateLove();
 
 }
 
-
-
 updateFunny();
-
 updateLove();
 
-
+/* SWIPE */
 
 let startX=0;
-
 let endX=0;
 
+function touchStart(e){
 
-
-function touchStart(e,type){
 startX=e.changedTouches[0].screenX;
+
 }
-
-
 
 function touchEnd(e,type){
 
 endX=e.changedTouches[0].screenX;
-
-handleSwipe(type);
-
-}
-
-
-
-function handleSwipe(type){
 
 const distance=endX-startX;
 
@@ -166,7 +147,7 @@ else prevLove();
 
 }
 
-
+/* HEARTS */
 
 function createHeart(){
 
@@ -186,11 +167,9 @@ setTimeout(()=>heart.remove(),7000);
 
 }
 
-
-
 setInterval(createHeart,400);
 
-
+/* FINAL */
 
 function showFinal(){
 
@@ -199,8 +178,6 @@ nextPage("final");
 confetti();
 
 }
-
-
 
 function confetti(){
 
