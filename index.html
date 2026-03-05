@@ -16,6 +16,7 @@
 
 <div id="hearts"></div>
 
+
 <div class="card" id="start">
 
 <h1>Gergő ❤️ Fanni</h1>
@@ -26,9 +27,10 @@
 
 <p>Van egy kis játék számodra</p>
 
-<button onclick="next('quiz1')">Kezdjük</button>
+<button onclick="nextPage('quiz1')">Kezdjük</button>
 
 </div>
+
 
 
 <div class="card hidden" id="quiz1">
@@ -42,6 +44,7 @@
 <button onclick="wrong()">Park Hotel</button>
 
 </div>
+
 
 
 <div class="card hidden" id="quiz2">
@@ -62,6 +65,7 @@
 </div>
 
 
+
 <div class="card hidden" id="quiz3">
 
 <h2>3. kérdés</h2>
@@ -75,36 +79,55 @@
 </div>
 
 
+
 <div class="card hidden" id="funnyPage">
 
 <h2>A legendás tokás képek</h2>
 
+<div class="sliderArea"
+ontouchstart="touchStart(event,'funny')"
+ontouchend="touchEnd(event,'funny')">
+
 <img id="funnyImg" src="images/funny1.jpg">
+
+</div>
 
 <p id="funnyCounter"></p>
 
+<div class="navButtons">
 <button onclick="prevFunny()">⬅</button>
 <button onclick="nextFunny()">➡</button>
+</div>
 
-<button onclick="next('lovePage')">Tovább</button>
+<button onclick="nextPage('lovePage')">Tovább</button>
 
 </div>
+
 
 
 <div class="card hidden" id="lovePage">
 
 <h2>Ezek a kedvenc képeim rólad ❤️</h2>
 
+<div class="sliderArea"
+ontouchstart="touchStart(event,'love')"
+ontouchend="touchEnd(event,'love')">
+
 <img id="loveImg" src="images/love1.jpg">
+
+</div>
 
 <p id="loveCounter"></p>
 
+<div class="navButtons">
 <button onclick="prevLove()">⬅</button>
 <button onclick="nextLove()">➡</button>
+</div>
 
-<button onclick="next('kiss')">Tovább</button>
+<button onclick="nextPage('kiss')">Tovább</button>
 
 </div>
+
 
 
 <div class="card hidden" id="kiss">
@@ -118,20 +141,24 @@
 </div>
 
 
+
 <div class="card hidden" id="final">
 
-<h1>Meglepetés</h1>
+<h1 class="reveal">I love you Fanni ❤️</h1>
 
-<p>Május 23–24 elmegyünk egy két napos kirándulásra.</p>
+<p class="reveal2">
+Május 23–24 elmegyünk egy két napos kirándulásra.
+</p>
 
-<p>Mielőtt nekivágunk a záróvizsgának.</p>
-
-<h2>Szeretlek Fanni ❤️</h2>
+<p class="reveal3">
+Mielőtt nekivágunk a záróvizsgának.
+</p>
 
 </div>
+
+
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
