@@ -128,10 +128,8 @@ let endX=0;
 
 
 
-function touchStart(e){
-
+function touchStart(e,type){
 startX=e.changedTouches[0].screenX;
-
 }
 
 
