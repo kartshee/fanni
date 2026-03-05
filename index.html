@@ -1,198 +1,137 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gergő ❤️ Fanni</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-body{
-font-family: Arial;
-background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-text-align:center;
-margin:0;
-padding:40px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-max-width:600px;
-margin:auto;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-button{
-padding:12px 20px;
-margin:10px;
-border:none;
-border-radius:10px;
-background:#ff4d6d;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-button:hover{
-background:#ff1f4b;
-}
-
-img{
-max-width:100%;
-border-radius:15px;
-margin-top:15px;
-}
-
-.hidden{
-display:none;
-}
-
-.gallery img{
-width:45%;
-margin:5px;
-}
-
-</style>
 </head>
 
 <body>
 
-<div id="start" class="card">
+<div id="hearts"></div>
+
+<div class="card" id="start">
 
 <h1>Gergő ❤️ Fanni</h1>
 
-<p>
-2024.02.16 óta együtt
-</p>
+<p>2024.02.16 óta együtt</p>
 
-<p>
-Van egy kis játék számodra.
-Ha végigcsinálod, kapsz egy meglepetést.
-</p>
+<h2 id="daysCounter"></h2>
 
-<button onclick="startGame()">Kezdjük</button>
+<p>Van egy kis játék számodra</p>
+
+<button onclick="next('quiz1')">Kezdjük</button>
 
 </div>
 
-<div id="quiz1" class="card hidden">
+
+<div class="card hidden" id="quiz1">
 
 <h2>1. kérdés</h2>
 
-<p>Hol volt az első randink?</p>
+<p>Hogy hívták a helyet ahol megszálltunk a Balaton Park Circuitnél?</p>
 
-<button onclick="correct1()">Újszegedi kávézó</button>
-<button onclick="wrong()">Budapest</button>
-<button onclick="wrong()">Kecskemét</button>
+<button onclick="correct('quiz2')">Melánia Vendégház</button>
+<button onclick="wrong()">Balaton Resort</button>
+<button onclick="wrong()">Park Hotel</button>
 
 </div>
 
-<div id="quiz2" class="card hidden">
+
+<div class="card hidden" id="quiz2">
 
 <h2>2. kérdés</h2>
 
-<p>Hol volt az első közös utazásunk?</p>
+<p>Melyik képen vagyunk rajta ténylegesen?</p>
 
-<button onclick="correct2()">Balaton Park Circuit</button>
-<button onclick="wrong()">Velence</button>
-<button onclick="wrong()">Bécs</button>
+<img src="images/edit1.jpg">
+<button onclick="wrong()">Ez</button>
+
+<img src="images/real.jpg">
+<button onclick="correct('quiz3')">Ez</button>
+
+<img src="images/edit2.jpg">
+<button onclick="wrong()">Ez</button>
 
 </div>
 
-<div id="quiz3" class="card hidden">
+
+<div class="card hidden" id="quiz3">
 
 <h2>3. kérdés</h2>
 
-<p>Milyen vicces képeket szoktunk csinálni?</p>
+<p>Milyen képeket szoktunk csinálni?</p>
 
-<button onclick="correct3()">Toka fotó lentről</button>
-<button onclick="wrong()">Selfie tükörben</button>
-<button onclick="wrong()">Macskás filter</button>
-
-</div>
-
-<div id="gallery" class="card hidden">
-
-<h2>Közös emlékeink</h2>
-
-<p>Íme néhány kedvenc pillanatunk ❤️</p>
-
-<div class="gallery">
-
-<img src="images/photo1.jpg">
-<img src="images/photo2.jpg">
-
-<img src="images/funny1.jpg">
-<img src="images/funny2.jpg">
-<img src="images/funny3.jpg">
+<button onclick="correct('funnyPage')">Tokás képek</button>
+<button onclick="wrong()">Tükör selfie</button>
+<button onclick="wrong()">Filteres selfie</button>
 
 </div>
 
-<button onclick="showFinal()">Tovább</button>
+
+<div class="card hidden" id="funnyPage">
+
+<h2>A legendás tokás képek</h2>
+
+<img id="funnyImg" src="images/funny1.jpg">
+
+<p id="funnyCounter"></p>
+
+<button onclick="prevFunny()">⬅</button>
+<button onclick="nextFunny()">➡</button>
+
+<button onclick="next('lovePage')">Tovább</button>
 
 </div>
 
-<div id="final" class="card hidden">
 
-<h1>Meglepetés 🎁</h1>
+<div class="card hidden" id="lovePage">
 
-<p>
-Ha ezt látod, akkor sikeresen végigcsináltad a játékot.
-</p>
+<h2>Ezek a kedvenc képeim rólad ❤️</h2>
 
-<h2>
-Május 23–24
-</h2>
+<img id="loveImg" src="images/love1.jpg">
 
-<p>
-Elmegyünk egy két napos kirándulásra együtt  
-mielőtt nekivágunk a záróvizsgának.
-</p>
+<p id="loveCounter"></p>
 
-<p>
-Addigra a szakdolgozatot is leadjuk.
-</p>
+<button onclick="prevLove()">⬅</button>
+<button onclick="nextLove()">➡</button>
 
-<h2>❤️</h2>
-
-<p>
-Szeretlek Fanni
-</p>
+<button onclick="next('kiss')">Tovább</button>
 
 </div>
 
-<script>
 
-function startGame(){
-document.getElementById("start").style.display="none";
-document.getElementById("quiz1").style.display="block";
-}
+<div class="card hidden" id="kiss">
 
-function correct1(){
-document.getElementById("quiz1").style.display="none";
-document.getElementById("quiz2").style.display="block";
-}
+<h2>Utolsó feladat</h2>
 
-function correct2(){
-document.getElementById("quiz2").style.display="none";
-document.getElementById("quiz3").style.display="block";
-}
+<p>Adj egy csókot hogy feloldd a meglepetést 😘</p>
 
-function correct3(){
-document.getElementById("quiz3").style.display="none";
-document.getElementById("gallery").style.display="block";
-}
+<button onclick="showFinal()">💋 Csók</button>
 
-function wrong(){
-alert("Nem ez a jó válasz 😄");
-}
+</div>
 
-function showFinal(){
-document.getElementById("gallery").style.display="none";
-document.getElementById("final").style.display="block";
-}
 
-</script>
+<div class="card hidden" id="final">
+
+<h1>Meglepetés</h1>
+
+<p>Május 23–24 elmegyünk egy két napos kirándulásra.</p>
+
+<p>Mielőtt nekivágunk a záróvizsgának.</p>
+
+<h2>Szeretlek Fanni ❤️</h2>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
