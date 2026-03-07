@@ -1,14 +1,30 @@
-function nextPage(id){
+function startGame(){
+
+document.getElementById("startScreen").style.display="none";
+
+nextPage("start",0);
+
+if(navigator.vibrate){
+navigator.vibrate(50);
+}
+
+}
+
+function nextPage(id,progress){
 
 document.querySelectorAll(".card").forEach(c=>c.style.display="none");
 
 document.getElementById(id).style.display="block";
 
+updateProgress(progress);
+
 }
 
-function correct(id){
+function correct(id,progress){
 
-nextPage(id);
+sparkle();
+
+nextPage(id,progress);
 
 }
 
@@ -18,10 +34,17 @@ alert("Nem ez volt az 😄");
 
 }
 
+/* PROGRESS */
+
+function updateProgress(value){
+
+document.getElementById("progressBar").style.width=value+"%";
+
+}
+
 /* DAY COUNTER */
 
 const startDate=new Date("2024-02-16");
-
 const today=new Date();
 
 const diff=Math.floor((today-startDate)/(1000*60*60*24));
@@ -39,8 +62,6 @@ const love=[];
 for(let i=1;i<=11;i++){
 love.push("images/love"+i+".jpg");
 }
-
-/* INDEX */
 
 let fIndex=0;
 let lIndex=0;
@@ -129,11 +150,25 @@ setTimeout(()=>heart.remove(),7000);
 
 setInterval(createHeart,400);
 
+/* SPARKLE */
+
+function sparkle(){
+
+const s=document.createElement("div");
+
+s.className="spark";
+
+document.body.appendChild(s);
+
+setTimeout(()=>s.remove(),800);
+
+}
+
 /* FINAL */
 
 function showFinal(){
 
-nextPage("final");
+nextPage("final",100);
 
 confetti();
 
@@ -148,13 +183,11 @@ const c=document.createElement("div");
 c.style.position="fixed";
 
 c.style.width="8px";
-
 c.style.height="8px";
 
 c.style.background="pink";
 
 c.style.left=Math.random()*100+"vw";
-
 c.style.top="-10px";
 
 c.style.opacity=Math.random();
