@@ -14,50 +14,6 @@ overflow-x:hidden;
 
 }
 
-/* TAP SCREEN */
-
-.startScreen{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:10;
-
-}
-
-.tapHeart{
-
-font-size:80px;
-
-animation:pulse 1.5s infinite;
-
-}
-
-@keyframes pulse{
-
-0%{transform:scale(1)}
-50%{transform:scale(1.2)}
-100%{transform:scale(1)}
-
-}
-
-/* CARD */
-
 .card{
 
 background:white;
@@ -75,12 +31,8 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 .hidden{
-
 display:none;
-
 }
-
-/* BUTTON */
 
 button{
 
@@ -107,12 +59,8 @@ cursor:pointer;
 }
 
 button:hover{
-
 background:#ff1f4b;
-
 }
-
-/* IMAGE */
 
 img{
 
@@ -126,27 +74,16 @@ object-fit:cover;
 
 }
 
-/* SLIDER */
-
 .sliderArea{
-
 overflow:hidden;
-
 touch-action:pan-y;
-
 }
 
 .navButtons{
-
 display:flex;
-
 justify-content:center;
-
 gap:20px;
-
 }
-
-/* HEARTS */
 
 #hearts{
 
@@ -186,54 +123,35 @@ animation:fall linear infinite;
 
 }
 
-/* FINAL ANIMATION */
-
 .reveal{
 font-size:26px;
 font-weight:600;
-
 opacity:0;
-
 transform:scale(0.5);
-
 animation:revealAnim 1s forwards;
-
 }
 
-
 .reveal2{
-
 opacity:0;
-
 animation:fadeIn 2s forwards;
-
 animation-delay:1s;
-
 }
 
 .reveal3{
-
 opacity:0;
-
 animation:fadeIn 2s forwards;
-
 animation-delay:2s;
-
 }
 
 @keyframes revealAnim{
-
 to{
 opacity:1;
 transform:scale(1);
 }
-
 }
 
 @keyframes fadeIn{
-
 to{
 opacity:1;
 }
-
 }
