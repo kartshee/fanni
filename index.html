@@ -12,9 +12,23 @@
 
 <div id="hearts"></div>
 
+<div id="progressBar"></div>
+
+<!-- TAP START -->
+
+<div class="startScreen" id="startScreen" onclick="startGame()">
+
+<div class="tapHeart">❤️</div>
+
+<h2>Tap to start</h2>
+
+<p>Gergő ❤️ Fanni</p>
+
+</div>
+
 <!-- START -->
 
-<div class="card" id="start">
+<div class="card hidden" id="start">
 
 <h1>Gergő ❤️ Fanni</h1>
 
@@ -24,7 +38,7 @@
 
 <p>Évforduló alkalmából készítettem neked ezt a kis meglepetést.</p>
 
-<button onclick="nextPage('quiz1')">Kíváncsi vagyok</button>
+<button onclick="nextPage('quiz1',10)">Kíváncsi vagyok</button>
 
 </div>
 
@@ -37,7 +51,7 @@
 
 <p>Hogy hívták azt a helyet ahol megszálltunk amikor a Balaton Park Circuitnél voltunk?</p>
 
-<button onclick="correct('quiz2')">Melánia Vendégház</button>
+<button onclick="correct('quiz2',20)">Melánia Vendégház</button>
 <button onclick="wrong()">Balaton Panzió</button>
 <button onclick="wrong()">Árvafa Vendégház</button>
 
@@ -53,10 +67,10 @@
 <p>Szerinted melyik képen vagyunk rajta tényleg?</p>
 
 <img src="images/edit1.jpg">
-<button onclick="wrong()">Szerintem ez az igazi</button>
+<button onclick="wrong()">Szerintem ez</button>
 
 <img src="images/real.jpg">
-<button onclick="correct('quiz3')">Ez biztos mi vagyunk</button>
+<button onclick="correct('quiz3',30)">Ez biztos mi vagyunk</button>
 
 <img src="images/edit2.jpg">
 <button onclick="wrong()">Talán ez?</button>
@@ -72,7 +86,7 @@
 
 <p>Milyen képeket szoktunk csinálni?</p>
 
-<button onclick="correct('funnyPage')">Tokás képek</button>
+<button onclick="correct('funnyPage',40)">Tokás képek</button>
 <button onclick="wrong()">Tükör szelfik</button>
 <button onclick="wrong()">Filteres hülyéskedés</button>
 
@@ -100,7 +114,7 @@ ontouchend="touchEnd(event,'funny')">
 <button onclick="nextFunny()">➡</button>
 </div>
 
-<button onclick="nextPage('lovePage')">Na jó, jöjjön a következő</button>
+<button onclick="nextPage('lovePage',60)">Na jó, jöjjön a következő</button>
 
 </div>
 
@@ -126,7 +140,7 @@ ontouchend="touchEnd(event,'love')">
 <button onclick="nextLove()">➡</button>
 </div>
 
-<button onclick="nextPage('kiss')">Van még valami...</button>
+<button onclick="nextPage('kiss',80)">Van még valami...</button>
 
 </div>
 
