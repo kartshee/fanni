@@ -2,34 +2,17 @@
 <html lang="hu">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gergő ❤️ Fanni</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div id="hearts"></div>
 
-<!-- START SCREEN -->
-
-<div class="startScreen" id="startScreen" onclick="startGame()">
-
-<div class="tapHeart">❤️</div>
-
-<h2>Tap to start</h2>
-
-<p>Gergő ❤️ Fanni</p>
-
-</div>
-
-
-<!-- MAIN START PAGE -->
+<!-- START -->
 
 <div class="card" id="start">
 
@@ -37,15 +20,11 @@
 
 <h2 id="daysCounter"></h2>
 
-<p>
-Azóta ismerjük egymást.
-</p>
+<p>Azóta ismerjük egymást.</p>
 
-<p>
-Évforduló alkalmából készítettem neked ezt a kis meglepit.
-</p>
+<p>Évforduló alkalmából készítettem neked ezt a kis meglepetést.</p>
 
-<button onclick="nextPage('quiz1')">Megnézem</button>
+<button onclick="nextPage('quiz1')">Kíváncsi vagyok</button>
 
 </div>
 
@@ -54,13 +33,13 @@ Azóta ismerjük egymást.
 
 <div class="card hidden" id="quiz1">
 
-<h2>1. kérdés</h2>
+<h2>Emlékszel?</h2>
 
-<p>Hogy hívták a helyet ahol megszálltunk a Balaton Park Circuitnél?</p>
+<p>Hogy hívták azt a helyet ahol megszálltunk amikor a Balaton Park Circuitnél voltunk?</p>
 
 <button onclick="correct('quiz2')">Melánia Vendégház</button>
 <button onclick="wrong()">Balaton Panzió</button>
-<button onclick="wrong()">Árvafa vendégház</button>
+<button onclick="wrong()">Árvafa Vendégház</button>
 
 </div>
 
@@ -69,18 +48,18 @@ Azóta ismerjük egymást.
 
 <div class="card hidden" id="quiz2">
 
-<h2>2. kérdés</h2>
+<h2>Egy kis kép teszt</h2>
 
-<p>Melyik képen vagyunk rajta ténylegesen?</p>
+<p>Szerinted melyik képen vagyunk rajta tényleg?</p>
 
 <img src="images/edit1.jpg">
-<button onclick="wrong()">Ez</button>
+<button onclick="wrong()">Szerintem ez az igazi</button>
 
 <img src="images/real.jpg">
-<button onclick="correct('quiz3')">Ez</button>
+<button onclick="correct('quiz3')">Ez biztos mi vagyunk</button>
 
 <img src="images/edit2.jpg">
-<button onclick="wrong()">Ez</button>
+<button onclick="wrong()">Talán ez?</button>
 
 </div>
 
@@ -89,18 +68,18 @@ Azóta ismerjük egymást.
 
 <div class="card hidden" id="quiz3">
 
-<h2>3. kérdés</h2>
+<h2>Ezt biztos tudod</h2>
 
 <p>Milyen képeket szoktunk csinálni?</p>
 
 <button onclick="correct('funnyPage')">Tokás képek</button>
-<button onclick="wrong()">Tükör selfie</button>
-<button onclick="wrong()">Filteres selfie</button>
+<button onclick="wrong()">Tükör szelfik</button>
+<button onclick="wrong()">Filteres hülyéskedés</button>
 
 </div>
 
 
-<!-- FUNNY SLIDER -->
+<!-- FUNNY -->
 
 <div class="card hidden" id="funnyPage">
 
@@ -126,11 +105,11 @@ ontouchend="touchEnd(event,'funny')">
 </div>
 
 
-<!-- LOVE SLIDER -->
+<!-- LOVE -->
 
 <div class="card hidden" id="lovePage">
 
-<h2>Ezek a kedvenc képeim rólad ❤️</h2>
+<h2>Ezek a kedvenc képeim rólad</h2>
 
 <div class="sliderArea"
 ontouchstart="touchStart(event)"
@@ -152,35 +131,37 @@ ontouchend="touchEnd(event,'love')">
 </div>
 
 
-<!-- KISS PAGE -->
+<!-- KISS -->
 
 <div class="card hidden" id="kiss">
 
-<h2>Utolsó feladat</h2>
+<h2>Mielőtt megmutatom a meglepetést</h2>
 
-<p>Adj egy csókot hogy feloldd a meglepetést 😘</p>
+<p>Jár egy csók 😘</p>
 
-<button onclick="showFinal()">💋 Csók</button>
+<button onclick="showFinal()">Csók</button>
 
 </div>
 
 
-<!-- FINAL PAGE -->
+<!-- FINAL -->
 
 <div class="card hidden" id="final">
 
-<h2 class="reveal">És még van egy meglepetés</h2>
+<h2 class="reveal">És még van egy meglepetésem</h2>
 
 <p class="reveal2">
-Május 23–24 szeretnélek elvinni valahova egy kicsit kikapcsolni.
+Május 23-án szeretnélek elvinni Szarvasra egy kis kirándulásra.
 </p>
 
 <p class="reveal3">
-Mielőtt belevágunk a záróvizsgába.
+Arra gondoltam, hogy sétálunk egy nagyot az arborétumban,
+csónakázunk egyet és kicsit kikapcsolódunk együtt,
+mielőtt belevágunk a záróvizsgába.
 </p>
 
 <p class="reveal3">
-Szeretlek nagyon ❤️
+Szeretlek ❤️
 </p>
 
 </div>
